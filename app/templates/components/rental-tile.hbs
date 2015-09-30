@@ -1,11 +1,14 @@
 
 <li>{{rental.owner}}'s {{rental.type}} in {{rental.city}}
   {{#if isImageShowing }}
-       <p><img src={{rental.image}} alt={{rental.type}} {{action 'imageHide'}}></p>
-     {{else}}
-     <button {{action 'imageShow'}}>Show image</button>
-    {{/if}}
+     <p><img src={{rental.image}} alt={{rental.type}} {{action 'imageHide'}}></p>
+   {{else}}
+   <button {{action 'imageShow'}}>Show image</button>
+  {{/if}}
+  <h3>Map of {{rental.owner}}'s {{rental.type}}</h3>
     <button {{action 'delete' rental}}>Delete</button>
 </li>
+
+{{google-map rental=rental}}
 
 {{yield}}
